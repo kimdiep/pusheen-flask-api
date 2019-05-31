@@ -35,6 +35,10 @@ Psycopg is the most popular PostgreSQL database adapter for the Python programmi
 Ensure postgresql is installed, on macOS:
 `brew install postgresql`
 
+- Postman
+Go to this link to install Postman:
+https://www.getpostman.com/downloads/
+
 
 ## Code Example
 
