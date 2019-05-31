@@ -34,5 +34,14 @@ def create_pusheen():
     manual_session.commit()
     return jsonify({'message': 'Hey, a pusheen has been successfully created! Woohoo!'}), 200
 
+@app.route('/create_food', methods=["POST"])
+def create_food():
+    dict_body = request.get_json()
+    print(dict_body)
+    food = Food(food=dict_body['food'])
+    manual_session.add(food)
+    manual_session.commit()
+    return jsonify({'message': 'Hey, a food item has been successfully created! Woohoo!'}), 200
+
 if __name__=="__main__":
     app.run(debug=True)
