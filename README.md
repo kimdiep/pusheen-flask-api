@@ -29,6 +29,13 @@ I want to learn more about:
 SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL.
 https://www.sqlalchemy.org/
 
+- psycopg2-binary
+Psycopg is the most popular PostgreSQL database adapter for the Python programming language.
+
+Ensure postgresql is installed, on macOS:
+`brew install postgresql`
+
+
 ## Code Example
 
 ## Installation
