@@ -26,12 +26,20 @@ I want to learn more about:
 - Flask
 - SQLAlchemy
 
+SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL.
+https://www.sqlalchemy.org/
+
 ## Code Example
 
 ## Installation
 
+## Getting started
+
 `git clone https://github.com/kimdiep/pusheen-flask-api.git`
 
+```bash
+pip3 install -r requirements.txt # to install python dependencies
+```
 
 ## How to use?
 
