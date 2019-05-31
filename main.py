@@ -1,5 +1,9 @@
+import sys
+sys.path.append('./models')
+
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from pusheen import *
 from sqlalchemy import create_engine, and_, text
 from sqlalchemy.orm import sessionmaker
 
@@ -19,6 +23,16 @@ manual_session = create_session(app.config)
 @app.route('/')
 def index():
     return 'hello world!'
+
+@app.route('/create_pusheen', methods=["POST"])
+def create_pusheen():
+    dict_body = request.get_json() #convert body to dictionary
+    print(dict_body) #have a look at what is coming in
+    pusheen = Pusheen(name=dict_body['name'],
+                      date_of_birth=dict_body['date_of_birth'])
+    manual_session.add(pusheen)
+    manual_session.commit()
+    return jsonify({'message': 'Hey, a pusheen has been successfully created! Woohoo!'}), 200
 
 if __name__=="__main__":
     app.run(debug=True)
