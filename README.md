@@ -50,11 +50,20 @@ Ensure postgresql is installed, on macOS:
 Go to this link to install Postman:
 https://www.getpostman.com/downloads/
 
-### Creating a database in psql
+### Creating a database and database tables in psql using SQLAlchemy
 
 1. Enter `psql` to connect to the database server
 2. `CREATE DATABASE "pusheen";` will create a database for pusheen
-3. Run the SQL script `\i db/migrations/01_create_db_tables.sql` to create the pusheen, fav_food and pusheen_fav_food tables in the database
+3. `\l` to list database to ensure `pusheen` is a database, `\q` to quit psql server
+4. In the root directory, start `python3` and enter the following commands to initialise database tables from the `pusheen.py` SQLAlchemy model:
+
+```python
+
+>>> from main import db
+>>> db.create_all()
+>>> exit()
+
+```
 
 ## How to use?
 
@@ -63,7 +72,7 @@ To start up the Flask API server:
 
 As an example to test, open up postman and do a POST request to `http://localhost:5000/create_pusheen` with the body:
 
-```javascript
+```json
 {
     "name":"Pusheen",
     "date_of_birth":"2019-01-01"
