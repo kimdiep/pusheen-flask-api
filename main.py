@@ -25,7 +25,14 @@ manual_session = create_session(app.config)
 def index():
     return 'hello world!'
 
-@app.route('/create_pusheen', methods=["POST"])
+@app.route('/api/get_pusheen', methods=['GET'])
+def get_pusheen():
+    return jsonify([
+    {'id': pusheen.id, 'name': pusheen.name, 'date_of_birth': pusheen.date_of_birth}
+    for pusheen in Pusheen.query.all()
+  ])
+
+@app.route('/api/create_pusheen', methods=["POST"])
 def create_pusheen():
     dict_body = request.get_json() #convert body to dictionary
     print(dict_body) #have a look at what is coming in
@@ -35,7 +42,7 @@ def create_pusheen():
     manual_session.commit()
     return jsonify({'message': 'Hey, a pusheen has been successfully created! Woohoo!'}), 200
 
-@app.route('/create_food', methods=["POST"])
+@app.route('/api/create_food', methods=["POST"])
 def create_food():
     dict_body = request.get_json()
     print(dict_body)
