@@ -3,13 +3,14 @@ sys.path.append('./models')
 
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from pusheen import *
 from sqlalchemy import create_engine, and_, text
 from sqlalchemy.orm import sessionmaker
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://kimdiep:test123@localhost/pusheen'
 db = SQLAlchemy(app)
+
+from pusheen import *
 
 def create_session(config):
     engine = create_engine(config['SQLALCHEMY_DATABASE_URI'])
