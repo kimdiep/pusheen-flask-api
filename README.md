@@ -70,7 +70,7 @@ https://www.getpostman.com/downloads/
 To start up the Flask API server: 
 `python3 main.py`
 
-As an example to test, open up postman and do a POST request to `http://localhost:5000/create_pusheen` with the body:
+As an example to test, open up postman and do a POST request to `http://localhost:5000/api/create_pusheen` with the body:
 
 ```json
 {
@@ -79,7 +79,7 @@ As an example to test, open up postman and do a POST request to `http://localhos
 }
 ```
 
-The data will be posted to the API endpoint `create_pusheen`.
+The data will be posted to the API endpoint `create_pusheen` and an entry added to the database table `pusheen`.
 
 ## Credits
 
