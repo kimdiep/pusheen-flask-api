@@ -11,6 +11,7 @@ I want to learn more about:
 
 - Python
 - Flask server API
+- Flask testing
 - SQLAlchemy
 - Postman
 
@@ -25,13 +26,13 @@ I want to learn more about:
 - Python
 - Flask
 - SQLAlchemy
+- Postman
 
 SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL.
 https://www.sqlalchemy.org/
 
 - psycopg2-binary
 Psycopg is the most popular PostgreSQL database adapter for the Python programming language.
-
 
 ## Code Example
 
@@ -84,6 +85,19 @@ The data will be posted to the API endpoint `create_pusheen` and an entry added 
 
 **GET request**
 As an example, start up your Flask API server, you can go to `http://127.0.0.1:5000/api/get_pusheen` and view the JSON response. In Google Chrome, you can use JSON viewer chrome extension to view the JSON in a more visual format.
+
+## Running tests
+
+**unittest and flask-testing**
+Unit tests for routes and test database using flask-testing module.
+
+Tests are available in `test.py`. To run the tests:
+
+```bash
+
+python3 test.py -v
+
+```
 
 ## Credits
 

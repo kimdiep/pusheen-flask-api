@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://kimdiep:test123@localhost/pusheen'
 db = SQLAlchemy(app)
 
-from pusheen import *
+from pusheen_food import *
 
 def create_session(config):
     engine = create_engine(config['SQLALCHEMY_DATABASE_URI'])
@@ -34,8 +34,8 @@ def get_pusheen():
 
 @app.route('/api/create_pusheen', methods=["POST"])
 def create_pusheen():
-    dict_body = request.get_json() #convert body to dictionary
-    print(dict_body) #have a look at what is coming in
+    dict_body = request.get_json()
+    print(dict_body)
     pusheen = Pusheen(name=dict_body['name'],
                       date_of_birth=dict_body['date_of_birth'])
     manual_session.add(pusheen)
