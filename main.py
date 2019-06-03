@@ -39,7 +39,7 @@ def create_pusheen():
     pusheen = Pusheen(name=dict_body['name'],
                       date_of_birth=dict_body['date_of_birth'])
     manual_session.add(pusheen)
-    manual_session.commit()
+    manual_session.commit() 
     return jsonify({'message': 'Hey, a pusheen has been successfully created! Woohoo!'}), 200
 
 @app.route('/api/get_food', methods=['GET'])
