@@ -19,6 +19,10 @@ class Pusheen(db.Model):
     def __repr__(self):
         return '<Pusheen %r>' % self.name
 
+    def __init__(self, name, date_of_birth):
+        self.name = name
+        self.date_of_birth = date_of_birth
+
 class Food(db.Model):
     __tablename__ = 'fav_food'
     id = db.Column(db.Integer, primary_key=True)
@@ -27,6 +31,9 @@ class Food(db.Model):
 
     def __repr__(self):
         return '<Pusheen %r>' % self.name
+    
+    def __init__(self, food):
+        self.food = food
 
 class PusheenFavFood(db.Model):
     __tablename__ = 'pusheen_fav_food'
