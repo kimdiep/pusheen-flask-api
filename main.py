@@ -42,6 +42,13 @@ def create_pusheen():
     manual_session.commit()
     return jsonify({'message': 'Hey, a pusheen has been successfully created! Woohoo!'}), 200
 
+@app.route('/api/get_food', methods=['GET'])
+def get_food():
+    return jsonify([
+    {'id': food.id, 'food': food.food}
+    for food in Food.query.all()
+  ])
+
 @app.route('/api/create_food', methods=["POST"])
 def create_food():
     dict_body = request.get_json()
@@ -50,6 +57,7 @@ def create_food():
     manual_session.add(food)
     manual_session.commit()
     return jsonify({'message': 'Hey, a food item has been successfully created! Woohoo!'}), 200
+
 
 if __name__=="__main__":
     app.run(debug=True)
