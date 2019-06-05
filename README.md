@@ -17,6 +17,8 @@ I want to learn more about:
 
 ## Build status
 
+[![Build Status](https://travis-ci.org/kimdiep/pusheen-flask-api.svg?branch=master)](https://travis-ci.org/kimdiep/pusheen-flask-api)
+
 ## Code style
 
 ## Screenshots
