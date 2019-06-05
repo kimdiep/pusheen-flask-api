@@ -1,5 +1,5 @@
 env:
-  - FLASK_APP=app.py
+  - FLASK_APP=main.py
 dist: xenial   # required for Python >= 3.7
 language: python
 python:

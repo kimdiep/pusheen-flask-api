@@ -36,14 +36,14 @@ class TestingViews(TestCase):
     self.assertIn(b'Pusheen', response.data)
     self.assertIn(b'Pusheenicorn', response.data)
 
-  def test_creates_pusheen(self):
-    response = self.client.post('/api/create_pusheen', 
-      data = json.dumps(dict(name = "Classic Pusheen", date_of_birth = "2019-01-01")),
-      content_type = 'application/json',
-      follow_redirects = True
-    )
-    self.assertIn(b'{"message":"Hey, a pusheen has been successfully created! Woohoo!"}\n', response.data)
-    self.assertEqual(response.status_code, 200)
+  # def test_creates_pusheen(self):
+  #   response = self.client.post('/api/create_pusheen', 
+  #     data = json.dumps(dict(name = "Classic Pusheen", date_of_birth = "2019-01-01")),
+  #     content_type = 'application/json',
+  #     follow_redirects = True
+  #   )
+  #   self.assertIn(b'{"message":"Hey, a pusheen has been successfully created! Woohoo!"}\n', response.data)
+  #   self.assertEqual(response.status_code, 200)
     
   def test_get_food(self):
     response = self.client.get('/api/get_food', content_type = 'html/text')
@@ -51,14 +51,14 @@ class TestingViews(TestCase):
     self.assertIn(b'muffin', response.data)
     self.assertIn(b'chocolate', response.data)
 
-  def test_creates_food_item(self):
-    response=self.client.post('/api/create_food', 
-      data = json.dumps(dict(food = "Cookies")),
-      content_type = 'application/json',
-      follow_redirects = True
-    )
-    self.assertIn(b'{"message":"Hey, a food item has been successfully created! Woohoo!"}\n', response.data)
-    self.assertEqual(response.status_code, 200)
+  # def test_creates_food_item(self):
+  #   response=self.client.post('/api/create_food', 
+  #     data = json.dumps(dict(food = "Cookies")),
+  #     content_type = 'application/json',
+  #     follow_redirects = True
+  #   )
+  #   self.assertIn(b'{"message":"Hey, a food item has been successfully created! Woohoo!"}\n', response.data)
+  #   self.assertEqual(response.status_code, 200)
 
   def tearDown(self):
     db.drop_all()
