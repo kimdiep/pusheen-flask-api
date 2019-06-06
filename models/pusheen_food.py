@@ -2,12 +2,7 @@ import sys
 sys.path.append('../')
 
 from datetime import date
-from flask import Flask, request, jsonify
-from flask_sqlalchemy import SQLAlchemy
 from main import db
-
-from sqlalchemy import create_engine, and_, text
-from sqlalchemy.orm import sessionmaker
 
 class Pusheen(db.Model):
     __tablename__ = 'pusheen'
